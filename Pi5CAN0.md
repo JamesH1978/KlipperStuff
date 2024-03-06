@@ -42,6 +42,7 @@ then activate it with:
 ```
 sudo systemctl enable can-up.service
 ```
+* Please note you might get a warning here saying the service is not found, this is fine to ignore
 reboot the host
 ```
 sudo reboot
