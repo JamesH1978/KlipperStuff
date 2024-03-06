@@ -4,6 +4,12 @@
 
 Connect Octopus to host via usb in dfu mode
 
+Configure the host for can0
+
+[Buster/Bullseye](RPIOSCAN0.md)
+
+[Bookworm](Pi5CAN0.md)
+
 Clone Katapult
 
 ```
