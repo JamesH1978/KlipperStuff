@@ -15,7 +15,7 @@ cd ~/katapult
 make menuconfig
 make
 ```
-![katapult_flash_settings](../files/KoctopusFlash.png)
+![katapult_flash_settings](/files/KoctopusFlash.png)
 
 _These settings are specifically for the H723 variant_
 
@@ -43,7 +43,7 @@ make clean
 make menuconfig
 make
 ```
-![klipper_flash_settings](../files/octopusFlash.png)
+![klipper_flash_settings](/files/octopusFlash.png)
 
 _These settings are specifically for the H723 variant_
 
