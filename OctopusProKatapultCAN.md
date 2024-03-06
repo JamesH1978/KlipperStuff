@@ -10,7 +10,7 @@ Configure the host for can0
 
 [Bookworm](Pi5CAN0.md)
 
-Clone Katapult
+Clone Katapult if you havent done so already
 
 ```
 git clone https://github.com/Arksine/katapult
