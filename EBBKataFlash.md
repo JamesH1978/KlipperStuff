@@ -90,5 +90,30 @@ canbus_uuid: 22fdec008eda
 ```
 * EBB can be whatever you want to call it
 
+## Updating EBB
+
+This is a fairly simple process now you have katapult installed
+
+First rebuild the bin file
+```
+cd ~/klipper
+git pull
+make clean
+make menuconfig
+make
+```
+![klipper_flash_settings](/files/EBBKlipperFlash.png)
+
+and then flash it with katapult
+```
+cd ~/katapult/scripts
+systemctl stop klipper
+python3 flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u 22fdec008eda
+systemctl start klipper
+```
+_Please remember to substitute your own uuid for the EBB_
+
+your EBB should now be updated
+
 
 
