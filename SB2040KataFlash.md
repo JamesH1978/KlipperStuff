@@ -91,7 +91,7 @@ canbus_uuid: 22fdec008eda
 
 ## Updating SB2040
 
-This is a fairly simple process now you have katapult
+This is a fairly simple process now you have katapult installed
 
 First rebuild the bin file
 ```
