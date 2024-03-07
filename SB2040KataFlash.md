@@ -89,5 +89,27 @@ canbus_uuid: 22fdec008eda
 ```
 * SB2040 can be whatever you want to call it
 
+## Updating SB2040
 
+This is a fairly simple process now you have katapult
 
+First rebuild the bin file
+```
+cd ~/klipper
+git pull
+make clean
+make menuconfig
+make
+```
+![klipper_flash_settings](/files/SB2040KlipFlash.png)
+
+and then flash it with katapult
+```
+cd ~/katapult/scripts
+systemctl stop klipper
+python3 flashtool.py -i can0 -f ~/klipper/out/klipper.bin -u 22fdec008eda
+systemctl start klipper
+```
+_Please remember to substitute your own uuid for the SB2040_
+
+your SB2040 should now be updated
