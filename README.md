@@ -9,3 +9,5 @@ This is a place I intend to put things that live in my brain but really should b
 [Guide for flashing Creality 4.2.x boards](Flash42x.md)
 
 [Guide for connecting print boards over uart](PiSerial.md)
+
+[Example macros for WLED progress LED's](WLEDProgress.md)
