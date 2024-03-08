@@ -36,14 +36,10 @@ gcode:
 [gcode_macro _set_leds]
 gcode:
     {% if printer.extruder.target == 0 %}
-        # the extrude heater is off
     {% else %}
         # the extrude heater is on
         {% if printer.idle_timeout.state == "Printing" %}
-            # we are printing
-            # progress is in the display_status object
             {% set perc = printer.display_status.progress %}
-            # set this to how many leds you have for your bar
             {% set numleds = 47 %}
             {% set last = (perc|float * numleds|float)|int %}
             {% for n in range(numleds) %}
@@ -53,7 +49,6 @@ gcode:
                     SET_WLED STRIP=alias RED=1 GREEN=0 BLUE=0 TRANSMIT=0 index={ n + 1|int }
                 {% endif %}
             {% endfor %}
-            # now actually transmit it
             SET_WLED STRIP=alias RED=0.3 GREEN=0.3 BLUE=0.3 TRANSMIT=1 INDEX={ last + 1|int }
         {% endif %}
     {% endif %}
@@ -61,7 +56,6 @@ gcode:
 
 ```
 [gcode_macro SET_WLED]
-description: SET_LED like functionality for WLED, applies to all active segments
 gcode:
     {% set strip = params.STRIP|string %}
     {% set red = params.RED|default(0)|float %}
