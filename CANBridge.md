@@ -3,6 +3,8 @@
 
 [BTT Octopus v1.01 - H723 variant](OctopusProKatapultCAN.md)
 
+[BTT Manta M8P v2 - H723 variant](MantaM8PKataCAN.md)
+
 [BTT Manta M5P - G0B1 variant](MantaM5PKataCAN.md)
 
 [BTT EBB Toolboards - G0B1 variants](EBBKataFlash.md)
