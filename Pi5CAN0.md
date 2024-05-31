@@ -56,3 +56,20 @@ Which should output similar to:
 6: can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP group default qlen 128
     link/can
 ```
+
+You may find your boot times are sub-optimal, this is usually networkd
+wait times, so run the following:
+
+_It may ask what editor to use, select nano_
+
+```
+sudo systemctl edit --full systemd-networkd-wait-online.service
+```
+then add
+
+```
+--timeout 1
+```
+Save with ctrl-x, y and enter
+
+then reboot pi
