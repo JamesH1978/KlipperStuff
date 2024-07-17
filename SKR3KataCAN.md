@@ -1,8 +1,8 @@
 # Guides and notes for Klipper 
-## Flashing an Manta SKR3 EZ with Katapult for a CAN bridge setup
+## Flashing an SKR3 EZ with Katapult for a CAN bridge setup
 
 
-Connect manta to host via usb in dfu mode
+Connect SKR3 to host via usb in dfu mode
 
 To do this hold the BOOT0 button down and tap reset
 
@@ -67,7 +67,7 @@ python3 flashtool.py -d /dev/serial/by-id/usb-katapult_stm32h723xx_32001C0010513
 ```
 _Please remember to use your found by-id_
 
-### Your manta is now flashed for both Katapult and Klipper
+### Your SKR3 is now flashed for both Katapult and Klipper
 
 you will now find that your board is not available using the command
 to find the by-id. This is normal and is due to the fact that the MCU 
@@ -89,7 +89,7 @@ Checking for Katapult nodes...
 Detected UUID: 33fdea008eda, Application: Klipper
 Query Complete
 ```
-This is the uuid for your manta and the syntax to use in the printer.cfg
+This is the uuid for your SKR3 and the syntax to use in the printer.cfg
 ```
 [mcu]
 canbus_uuid: 33fdea008eda
