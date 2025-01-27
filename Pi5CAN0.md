@@ -6,9 +6,9 @@ networking was handled by dhcpcd. So all you had to do was add a file
 /etc/network/interfaces.d and call it can0
 
 In these modern times networking is handled by NetworkManager(NM) and
-as such a new file has to be created.
+as such a couple of new file need to be created.
 ```
-sudo nano /etc/systemd/network/80-can.network
+sudo nano /etc/systemd/network/80-can0.network
 ```
 Paste in the following:
 ```
@@ -20,29 +20,25 @@ BitRate=1M
 ```
 **CTRL-X** then **Y** and **Enter** to save
 
-Then run
 ```
-sudo systemctl enable systemd-networkd --now
-```
-We also need to up the txqueuelen value to 128, this is done with a service file
-```
-sudo nano /etc/systemd/system/can-up.service
+sudo nano /etc/systemd/network/80-can0.link
 ```
 Paste in the following:
 ```
-[Service]
-Type=oneshot
-ExecStart=/usr/sbin/ifconfig can0 txqueuelen 128
+[Match]
+OriginalName=can0
 
-[Install]
-WantedBy=sys-subsystem-net-devices-can0.device
+[Link]
+TransmitQueueLength=128
 ```
 **CTRL-X** then **Y** and **Enter** to save
-then activate it with:
+
+Then run
 ```
-sudo systemctl enable can-up.service
+sudo systemctl enable systemd-networkd --now
+
 ```
-* Please note you might get a warning here saying the service is not found, this is fine to ignore
+
 reboot the host
 ```
 sudo reboot
